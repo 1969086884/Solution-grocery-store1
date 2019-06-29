@@ -1,0 +1,43 @@
+<template name="mys">
+
+  <view class="products-box">
+
+    <block wx:for="{{fearsArr}}">
+
+
+      <view class="{{item.top==1&&I?'products-item-top':'products-item'}}" bindtap="onFearsItemTap" data-id="{{item.id}}" data-my="{{true}}" bindtouchend='touchend' bindlongtap='onLongTapDelete'>
+
+        <view class='img-container'>
+          <!-- 注意单引号和双引号的结合使用 -->
+          <image class='products-image' src="{{item.img.length>60?item.img:'/imgs/temp/zyl.png'}}" mode='aspectFill'></image>
+        </view>
+        <view class='two-container'>
+
+          <view class='bottom-container'>
+            <view class='type'>
+              <text>{{typeName[item.type]}}</text>
+            </view>
+            <!-- <image src="{{item.collects.length>0?'/imgs/icon/star.png':'/imgs/icon/collectHL.png'}}" data-id="{{item.id}}" data-collect="{{item.collects.length>0?true:false}}" catchtap="onCollectTap" mode="scaleToFill"></image> -->
+          </view>
+
+
+
+
+          <view class='text-container'>
+            <view class="products-item-title">
+              <text class="name">{{item.fear}}</text>
+            </view>
+            <view class="products-item-date">{{item.create_time}}</view>
+          </view>
+
+        </view>
+
+
+
+      </view>
+
+
+    </block>
+  </view>
+
+</template>

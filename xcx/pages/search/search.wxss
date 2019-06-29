@@ -1,0 +1,27 @@
+/* pages/search/search.wxss */
+@import "../tpls/products/products-tpl.wxss";
+
+.searchContainer
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.log{
+ font-size: 20;
+ z-index: 1;
+}
+.deleteone{
+ color: #932;
+ position: absolute;
+ right: 20px;
+ background: blueviolet;
+
+
+}
+.search-header
+{
+  display: flex;
+  justify-content: center;
+  color: burlywood;
+}

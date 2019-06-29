@@ -1,0 +1,25 @@
+
+{
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/ihome/ihome",
+        "iconPath": "imgs/toolbar/home.png",
+        "selectedIconPath": "imgs/toolbar/home@selected.png",
+        "text": "主页"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "iconPath": "imgs/toolbar/category.png",
+        "selectedIconPath": "imgs/toolbar/category@selected.png",
+        "text": "分类"
+      }
+     
+    ],
+    "backgroundColor": "#F5F5F5",
+    "selectedColor": "#AB956D",
+    "color": "#989898",
+    "borderStyle": "white",
+    "position": "top"
+  }
+}

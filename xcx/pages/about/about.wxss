@@ -1,0 +1,9 @@
+/* pages/about/about.wxss */
+page
+{
+    background-color:rgba(209, 181, 159,0.2);
+}
+.about-container
+{
+ 
+}

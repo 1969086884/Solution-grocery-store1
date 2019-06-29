@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<import src="../tpls/products/products-tpl.wxml" />
+
+<import src="../tpls/fears/fears-tpl.wxml" />
+
+
+<view class="container">
+
+
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <!-- <text class="usermotto">{{motto}}</text> -->
+
+
+  <view class="tablist">
+    <view wx:for="{{tabs}}" wx:for-index="idx" class="tab" bindtap="touchTab" style="{{item.extraStyle}}" id="{{idx}}">
+      <view class="{{highLightIndex == idx ? 'bule-content' : 'black-content'}}">
+        <image class="image" mode="aspectFit" src="{{highLightIndex == idx ? item.iconActive : item.icon}}"></image>
+        <view style="margin-top:2px;margin-bottom:2px;">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <block>
+      <image src='/imgs/icon/adds.png' class='add' bindtap='bindNew'> </image>
+      <image src='/imgs/icon/search.png' class='search' bindtap='bindfind'> </image>
+    </block>
+  </view>
+
+
+  <view class="home-main-products">
+    <view class="home-main-header">{{ty[highLightIndex]}}</view>
+    <view hidden='{{highLightIndex==1}}'>
+      <template is="mys" data="{{fearsArr:fearsArr,typeName,I}}" />
+    </view>
+
+    <view hidden='{{highLightIndex==0}}'>
+      <template is="fears" data="{{Arr:Arr,typeName,I}}" />
+    </view>
+
+
+    <!-- 老是忘记传完所有的参数 -->
+
+  </view>
+
+
+
+  <loading hidden="{{highLightIndex==0?loadingHidden:cLoadingHidden}}">
+    正在加载...
+  </loading>
+  <view hidden='{{highLightIndex==0?end:cend}}'>
+    <label class='end-line'>------。我是有底线的 。------</label>
+  </view>
+</view>

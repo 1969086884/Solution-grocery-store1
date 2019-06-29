@@ -1,0 +1,132 @@
+/* pages/Content/Content.wxss */
+
+page {
+  background-color: rgba(0, 140, 0, 0.10);
+}
+
+.content-title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 200px;
+  margin: 20rpx auto 20rpx auto;
+}
+
+.content-date {
+  font-size: 11px;
+  text-align: center;
+  /* margin-right: 10rpx */
+}
+
+.swiper-content {
+  width: 100%;
+  height: 900rpx;
+}
+
+.content-border {
+}
+
+.scrool-view {
+  height: 88%;
+  margin-top: 10rpx;
+  margin-bottom: 100rpx;
+  /* background-color: red; */
+}
+
+.swiper-item {
+  border: 10rp solid blue;
+}
+
+.section-title {
+  display: flex;
+  font-size: 16px;
+  font-weight: 100px;
+  justify-content: center;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  color: #ab956d;
+}
+
+.content-section {
+  width: 100%;
+}
+
+.section-para {
+  font-size: 15px;
+  text-align: left;
+}
+
+.section-add-title {
+  font-size: 15px;
+  color: #ab956d;
+  font-weight: 100px;
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.section-add-details {
+  font-size: 15px;
+  text-align: left;
+  line-height: 70rpx;
+  margin-bottom: 20rpx;
+}
+
+.img {
+  margin-top: 10rpx;
+  height: 22px;
+  width: 22px;
+}
+
+.choose {
+  color: green;
+}
+
+.h4 {
+  color: green;
+  font-size: 35rpx;
+}
+
+.public {
+  color: red;
+}
+
+.add-abit {
+  width: 100%;
+}
+
+.add-some-tap {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.form {
+  z-index: -1;
+}
+
+.tip {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.privacy {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20rpx;
+  margin-bottom: 15rpx;
+}
+
+.prew-img {
+  width: 100%;
+  /* height: 360rpx; */
+}
+
+.big-img {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+}

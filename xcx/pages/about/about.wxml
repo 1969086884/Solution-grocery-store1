@@ -1,0 +1,30 @@
+<!--pages/about/about.wxml-->
+<view class="about-container">
+  <view class="page__hd">
+    <view class="page__title">关于解忧杂货铺</view>
+   
+  </view>
+  <view class="page__bd">
+   
+   
+    
+    <view class="weui-cells weui-cells_after-title">
+      <navigator url="../webpage/webpage?url=https://m.sohu.com/a/165992335_222858/?" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">原理视频</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="/pages/we/we" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">原理说明</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+
+      <navigator url="/pages/we/we" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">关于希望</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+     
+    
+   
+  </view>
+</view>

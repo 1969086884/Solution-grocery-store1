@@ -1,0 +1,54 @@
+<!--pages/ihome/ihome.wxml-->
+<import src="../tpls/fears/fears-tpl.wxml" />
+<view class='container'>
+  <!--搜索框部分-->
+  <view class="weui-search-bar searchresult ser ">
+    <view class="weui-search-bar__form   weui-search-bar__box">
+      <!--输入框部分-->
+
+      <!--如果有内容就出现右侧清空图标-->
+
+      <!--当搜索输入框中input不显示的时候就是用这样的一个带图标的lable来占据空间-->
+      <label class="weui-search-bar__label weui-search-bar__input" bindtap="goToSearch">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+
+
+    </view>
+
+
+  </view>
+
+
+  <swiper indicator-dots="true" autoplay="true" class="swiper">
+    <block wx:for="{{bannerArr}}">
+      <swiper-item class="banner-item" bindtap="onBannersItemTap" data-url="{{item.url}}">
+        <image class="item-image" src="{{item.img.url}}" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="home-main">
+
+
+
+
+    <view class="home-main-products">
+      <view class="home-main-header">新 的 烦 恼</view>
+
+      <template is="fears" data="{{Arr:fearsArr,typeName}}" />
+
+    </view>
+  </view>
+
+
+
+  <loading hidden="{{loadingHidden}}">
+  正在加载...
+  </loading>
+  <view hidden='{{end}}'>
+  <label class='end-line' hidden='{{end}}'>------。我是有底线的 。------</label>
+  </view>
+  
+
+</view>

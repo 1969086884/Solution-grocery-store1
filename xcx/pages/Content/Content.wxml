@@ -1,0 +1,147 @@
+<view class="content-container">
+
+
+  <view class="content-title">
+    <text>{{content.fear}}</text>
+  </view>
+  <view class='content-date'>
+    <text>{{content.create_time}}</text>
+  </view>
+
+  <view class='content-border'>
+    <swiper class='swiper-content' current='{{key}}' bindchange='bannerChange'>
+
+      <swiper-item class='swiper-item'>
+        <view class="section-title">------Precautions------</view>
+        <scroll-view class='scrool-view' scroll-y="true" scroll-with-animation='true'>
+          <view class="content-section">
+
+            <text class="section-para">
+            {{content.precaution}}
+            </text>
+            <view wx:if='{{content.precautions.length}}' class='section-add-title'>Other Precautions
+            </view>
+
+
+            <view wx:for='{{content.precautions}}'>
+
+              <text class='section-add-details'>{{index}}.{{item.content}}</text>
+
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+      <swiper-item class='swiper-item'>
+        <view class="section-title">--------repairs--------</view>
+        <scroll-view class='scrool-view' scroll-y="true">
+          <view class="content-section">
+
+            <text class="section-para">
+            {{content.repair}}
+            </text>
+
+            <view wx:if='{{content.repairs.length}}' class='section-add-title'>Other repairs</view>
+            <view wx:for='{{content.repairs}}'>
+              <text class='section-add-details'>{{index}}.{{item.content}}</text>
+            </view>
+          </view>
+
+        </scroll-view>
+      </swiper-item>
+
+      <swiper-item class='swiper-item'>
+        <view class="section-title">--------benefits--------</view>
+        <scroll-view class='scrool-view' scroll-y="true">
+          <view class="content-section">
+
+            <text class="section-para">
+              {{content.benefit}}
+            </text>
+
+            <view wx:if='{{content.benefits.length}}' class='section-add-title'>Other benefits</view>
+            <view wx:for='{{content.benefits}}'>
+              <text class='section-add-details'>{{index}}.{{item.content}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+
+      <swiper-item class='swiper-item'>
+        <view class="section-title">--------Pay--------</view>
+        <scroll-view class='scrool-view' scroll-y="true">
+          <view class="content-section">
+
+
+            <text class="section-para">
+              {{content.pay}}
+            </text>
+
+            <view wx:if='{{content.pays.length}}' class='section-add-title'>Other pays</view>
+            <view wx:for='{{content.pays}}'>
+              <text class='section-add-details'>{{index}}.{{item.content}}</text>
+            </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+
+      <swiper-item class='swiper-item'>
+        <view>
+          <label class="section-title">图片(1张)</label>
+          <image class='prew-img' bindtap='enterImg' src="{{content.img.length>60?content.img:'/imgs/temp/zyl.png'}}" mode='widthFix' data-src="{{content.img.length>60?content.img:'/imgs/temp/zyl.png'}}"></image>
+
+        </view>
+      </swiper-item>
+
+
+    </swiper>
+  </view>
+
+
+
+
+
+
+
+
+  <view class="weui-search-bar add-some-tap" bindtap="goToWrite" hidden='{{key==4||showAddIcon==true}}'>
+    <view class="weui-search-bar__form  weui-search-bar__box">
+
+      <label class="weui-search-bar__input tip ">
+
+        <image class="weui-icon-search img" src='/imgs/icon/Plus.png'></image>
+        <view class="weui-search-bar__text ">补充</view>
+      </label>
+
+
+    </view>
+  </view>
+
+
+
+  <form hidden='{{key==4||showAddIcon==false}}' class='form' bindsubmit='formSubmit' data-id="{{content.id}}" bindreset='contentReset'>
+
+
+    当前选择：###
+    <label class='choose'>{{parterns[key]}}</label>###
+
+    <textarea class='add-abit' name='content' placeholder='请输入你想补充的那部分的内容' cursor-spacing='20' focus='{{showAddIcon==true}}' bindconfirm="goUp"></textarea>
+
+    <view>
+      <view class='privacy'>
+        <label>公 开</label>
+        <switch name='privacy' checked />
+      </view>
+
+      <button form-type='submit' class="weui-btn" type="primary" size='default' plain="true">提交</button>
+      <button form-type='reset' class="weui-btn" type="primary" size='default' plain="true">重置</button>
+
+    </view>
+  </form>
+
+
+  <image class='big-img' mode="aspectFit" hidden='{{!imgMode}}' bindtap='leaveImg' src="{{imgUrl}}"> </image>
+
+  
+</view>

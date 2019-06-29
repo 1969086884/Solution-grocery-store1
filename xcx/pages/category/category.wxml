@@ -1,0 +1,14 @@
+  <view class="home-main-theme">
+            <view class="home-main-header">精 选 主 题</view>
+            <view class="theme-box">
+                <block wx:for="{{catagoryArr}}">
+                    <view wx:if="{{index==100}}" class="theme-item big" bindtap="onThemesItemTap" data-id="{{item.id}}" data-name="{{item.name}}">
+                        <image src="{{item.img.url}}"></image>
+                    </view>
+  
+                    <view wx:else class="theme-item"  data-id="{{item.id}}" bindtap="onThemesItemTap" data-name="{{item.name}}">
+                        <image src="{{item.img.url}}"></image>
+                    </view>
+                </block>
+            </view>
+         </view>  

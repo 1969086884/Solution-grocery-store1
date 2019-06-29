@@ -1,0 +1,57 @@
+{
+  "pages": [
+      "pages/ihome/ihome",
+      "pages/index/index",
+    "pages/about/about",
+    "pages/AddMyContent/AddMyContent",
+    "pages/search/search",
+    "pages/category/category",
+    "pages/Content/Content",
+    "pages/logs/logs",
+    "pages/webpage/webpage",
+    "pages/we/we"
+  ],
+  "window": {
+    "navigationBarTitleText": "解 忧  杂货铺",
+    "navigationBarTextStyle": "#FFFFFF",
+    "navigationBarBackgroundColor": "",
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/ihome/ihome",
+        "iconPath": "imgs/toolbar/home.png",
+        "selectedIconPath": "imgs/toolbar/home@selected.png",
+        "text": "主页"
+      },
+     
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "imgs/toolbar/my.png",
+        "selectedIconPath": "imgs/toolbar/my@selected.png",
+        "text": "我的"
+      } ,
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "imgs/toolbar/category.png",
+        "selectedIconPath": "imgs/toolbar/category@selected.png",
+        "text": "关于"
+      }
+    ],
+    "backgroundColor": "#F5F5F5",
+    "selectedColor": "#AB956D",
+    "color": "#989898",
+    "borderStyle": "white",
+    "position": "bottom"
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "debug": true
+}

@@ -1,0 +1,35 @@
+<template name="fears">
+
+  <view class="products-box1">
+
+    <block wx:for="{{Arr}}">
+
+      <view class="{{I?'products-item-top1':'products-item1'}}" bindtap="onFearsItemTap" data-id="{{item.id}}" data-my="{{item.my}}" bindtouchend='touchend' >
+
+        <view class='bottom-container1'>
+          <view class='type1'>
+            <text>{{typeName[item.type]}}</text>
+          </view>
+     
+           <image src="{{item.pivot||item.collects.length? '/imgs/icon/star.png':'/imgs/icon/collectHL.png'}}" class='img-container1' data-id="{{item.id}}" data-collect="{{item.pivot||item.collects.length?true:false}}" catchtap="onCollectTap" mode="scaleToFill"></image>
+      
+         
+        </view>
+
+        <view>
+          <!-- 注意单引号和双引号的结合使用 -->
+          <image class='products-image1' src="{{item.img.length>60?item.img:'/imgs/temp/zyl.png'}}" mode='aspectFill'></image>
+        </view>
+
+        <view class="products-item-title1">
+          <text class="name1">{{item.fear}}</text>
+        </view>
+        <view class="products-item-date1">{{item.create_time}}</view>
+
+      </view>
+
+
+    </block>
+  </view>
+
+</template>

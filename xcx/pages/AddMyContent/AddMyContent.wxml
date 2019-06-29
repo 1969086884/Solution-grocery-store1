@@ -1,0 +1,101 @@
+<!--pages/AddMyContent/AddMyContent.wxml-->
+<view class='add-content-container'>
+
+
+  <form bindsubmit='formSubmit' bindreset='contentReset'>
+
+    <view class='fear-container'>
+      <view class='fear-title'>Fear:</view>
+      <textarea class='fear-input' name='fear' auto-focus='true' placeholder='请输入恐惧或者害怕的内容，必填' maxlength='200' value='{{content.fear}}'>
+      </textarea>
+
+    </view>
+
+
+
+
+    <swiper bindanimationfinish='swiperChangeEnd' class='swiper-content'>
+      <swiper-item class='swiper-item'>
+        <view>
+          <label class='title'>Precaution:</label>
+          <!-- <input class='input-auto' name='precaution' placeholder='请输入预防恐惧发生措施，可以先不填' maxlength='400' value='{{content.precaution}}'>   -->
+
+          <textarea class='text' class='text-input' name='precaution' placeholder='请输入预防恐惧发生措施，可以先不填,最多400字哦' maxlength='400' value='{{showValues?inputValues.precaution:content.precaution}}'></textarea>
+
+          <!-- </input>  -->
+        </view>
+      </swiper-item>
+
+
+      <swiper-item class='swiper-item'>
+        <view>
+          <label class='title'>Rpair:</label>
+
+          <!-- <input class='input-auto' name='repair' placeholder='请输入恐惧发生之后的补救方法，可以先不填，' maxlength='400' value='{{content.repair}}'/> -->
+
+          <textarea class='text-input' name='repair' placeholder='请输入恐惧发生之后的补救方法，可以先不填，最多400字哦' maxlength='400' value='{{showValues?inputValues.benefit:content.repair}}' fixed='false'></textarea>
+
+
+        </view>
+      </swiper-item>
+
+      <swiper-item class='swiper-item'>
+        <view>
+          <label class='title'>Benefit:</label>
+
+          <textarea class='text-input' name='benefit' placeholder='请输入恐惧发生之后可能得到的成长或者好处，可以先不填，最多400字哦' maxlength='400' value='{{showValues?inputValues.benefit:content.benefit}}' fixed='false'></textarea>
+
+        </view>
+      </swiper-item>
+
+      <swiper-item class='swiper-item'>
+        <view>
+          <label class='title'>Pay</label>
+          <textarea class='text-input' name='pay' placeholder='请输入因为害怕就一直维持现状所要付出的代价，最多400字哦' maxlength='400' value='{{cshowValues?inputValues.pay:content.pay}}'></textarea>
+        </view>
+      </swiper-item>
+
+
+       <swiper-item class='swiper-item'>
+         <view>
+          <label class='title'>图片(1张,长按添加)</label>
+          <image class='prew-img' bindlongtap='chooseImgAgain' src='{{imgPath?imgPath:content.img}}' mode='aspectFit'></image>
+        </view> 
+      </swiper-item> 
+
+    </swiper>
+
+
+    <view class='submit-values'>
+      <view class='type-privacy'>
+        <view class='type-name'>
+          <!-- 如果是编辑页面那么传进来的content.type就是有值的，那么这个时候就展示相应的值
+        不然，则使用选择默认的index -->
+           <picker name='type' value='{{content.type?content.type:index}}' bindchange='chooseContentType' range='{{typeName}}'>
+            <label>类别：</label>
+            <label class='type-namely'>{{content.type?typeName[content.type]:typeName[index]}}</label>
+          </picker> 
+        </view>
+
+
+        <view class='privacy'>
+          <block>
+            <label> 公开 </label>
+            <switch name='privacy' checked />
+            <switch name='privacy1' hidden='true' checked='{{ediType}}' />
+            <!-- 要靠这个来修改text area -->
+          </block>
+        </view>
+      </view>
+
+      <button form-type='submit' class="btn-submit" type="primary" size='default' plain="true">提交</button>
+      <button form-type='reset' class="btn-reset" type="default" size='default' plain="true">重置</button>
+
+    </view>
+
+
+
+  </form>
+
+
+</view>
